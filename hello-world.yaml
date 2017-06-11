@@ -5,10 +5,10 @@ metadata:
  labels:
    app: web
 spec:
- containers:
-   - name: hello-world-cont
-     image: registrypoc.azurecr.io/registrypoc/hello-world
-     ports:
-       - containerPort: 80
-     imagePullSecrets:
-       - name: registrykey
+  containers:
+    - name: hello-world-cont
+      image: registrypoc.azurecr.io/registrypoc/hello-world
+      ports:
+        - containerPort: 80
+  imagePullSecrets:
+    - name: registrykey
