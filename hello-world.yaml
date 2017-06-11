@@ -1,18 +1,4 @@
 apiVersion: v1
-kind: Service
-metadata:
-  name: hello-world
-  labels:
-    app: hello-world
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-    targetPort: 8001
-  selector:
-    run: hello-world
----
-apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: hello-world
@@ -21,13 +7,12 @@ spec:
   template:
     metadata:
       labels:
-        run: hello-world
         app: hello-world
     spec:
       containers:
       - name: hello-world
         image: registrypoc.azurecr.io/registrypoc/hello-world
         ports:
-          - containerPort: 8001
+          - containerPort: 80
       imagePullSecrets:
         - name: registrykey
