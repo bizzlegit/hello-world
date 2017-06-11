@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: registrypoc.azurecr.io/registrypoc/hello-world
+        image: registrypoc.azurecr.io/hello-world
         ports:
         - containerPort: 80
